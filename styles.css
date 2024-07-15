@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.myLibrary {
+    background-color: aliceblue;
+}
+
+.header {
+    padding: 1em;
+    display: flex;
+    gap: 2em;
+}
+
+.header button {
+    font-size: 2em;
+    width: 2em;
+    border-radius: 8px;
+    background-color: antiquewhite;
+}
+
+.header button:hover {
+    opacity: 0.7;
+}
+
+.modal {
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 50%;
+    background-color: rgb(246, 247, 248);
+    padding: 1em;
+    margin: 2em;
+    border-color: 1px solid #d6d9dc;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 1em;
+    width: 30%;
+    border-color: 1px solid black;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.close {
+    color: black;
+    float:right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close.focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bookform {
+    background-color: #f6f7f8;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.bookform label {
+    margin-bottom: 1em
+}
+
+.bookform input[type="text"],
+.bookform input[type="number"] {
+    background-color: #FFFF;
+    border: 1px solid #d6d9dc;
+    border-radius: 3px;
+    width: 80%;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.form-row {
+    margin-bottom:1em;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form-row-legacy {
+    margin-bottom:1em;
+    display: inline-block;
+    
+}
+
+.button-container input[type="submit"] {
+    font-size: 1em;
+    font-weight: bold;
+
+    color: black;
+    background-color: rgba(193, 207, 205, 0.452);
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    padding: 0.3em 0.3em;
+    cursor: pointer;
+}
+
+
+#bookshelf {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    background-color: whitesmoke;
+    margin: 1em;
+    width: 40em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card p {
+    margin: 0.5em 0;
+}
