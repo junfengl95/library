@@ -24,25 +24,15 @@
     opacity: 0.7;
 }
 
-.modal {
-    display:none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 30%;
-    height: 50%;
-    background-color: rgb(246, 247, 248);
-    padding: 1em;
-    margin: 2em;
-    border-color: 1px solid #d6d9dc;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    padding: 1em;
-    width: 30%;
-    border-color: 1px solid black;
+dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    align-self: center;
+    justify-self: center;
 }
 
 .form-header {
@@ -50,6 +40,7 @@
     flex-direction: row;
     align-content: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .close {
@@ -95,12 +86,17 @@
 }
 
 .form-row-legacy {
-    margin-bottom:1em;
+    margin-bottom:1.5em;
+    margin-top: 1em;
     display: inline-block;
-    
 }
 
-.button-container input[type="submit"] {
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-container button {
     font-size: 1em;
     font-weight: bold;
 
@@ -116,8 +112,8 @@
 
 
 #bookshelf {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto;
 }
 
 .card {

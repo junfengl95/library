@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addBookToLibrary(title, author, pages, hasRead) {
         const newBook = new Book(title, author, pages, hasRead);
         myLibrary.push(newBook);
-
+        displayBooks();
     }
 
 
@@ -64,27 +64,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     displayBooks();
 
-    // Modal and form handling
-    const modal = document.getElementById('myModal');
+    // Dialog modal and form handling
+    const dialog = document.getElementById('bookDialog');
     const btn = document.getElementById('addBook');
-    const span = document.getElementsByClassName('close')[0];
     const form = document.getElementsByClassName(`bookform`);
+    const cancelBtn = document.getElementById('cancelButton')
+    const span = document.getElementsByClassName('close')[0];
 
     // When user clicks on the button, open the modal
     btn.onclick = function() {
-        modal.style.display = `block`;
+        dialog.showModal(); // open the dialog
     }
 
     // When user clicks on <span> (x), close the modal
     span.onclick = function() {
-        modal.style.display = 'none';
+        dialog.close(); // close the dialog
+    }
+
+    cancelBtn.onclick = function() {
+        dialog.close();
     }
 
     // When user clicks anywhere outside the modal. close it
-    window.onclick = function(event) {
-        if (event.target == modal){
-            modal.style.display = 'none';
-        }
+    // window.onclick = function(event) {
+    //     if (event.target == dialog){
+    //         modal.style.display = 'none';
+    //     }
+    // }
+
+    //When form is submitted, add new book to library
+    form.onsubmit = function(event) {
+        event.preventDefault(); // without action, default action will redirect to page
+
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const pages = document.getElementById('pages').value;
+        const hasRead = document.getElementById('hasRead').ariaChecked;
+
+        addBookToLibrary(title, author, pages, hasRead);
+
+        // Close the dialog and reset the form
+        dialog.close();
+        form.reset();
     }
 
 })  
