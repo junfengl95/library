@@ -45,8 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const bookshelf = document.getElementById('bookshelf');
         bookshelf.innerHTML = "";
 
+        // The index attribute refer to the index of the current book object in the array
         myLibrary.forEach((book, index)=> {
-            // console.log(book.info())
+
             // Create a Card element
             const card = document.createElement('div');
             card.classList.add('card');
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //When form is submitted, add new book to library
+    // form.onsubmit did not work; require to be more specific so called the submit button
     submitBtn.onclick = function (event) {
         event.preventDefault(); // without action, default action will redirect to page
 
