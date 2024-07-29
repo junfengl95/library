@@ -2,6 +2,8 @@
 
 The Library App is a simple web application that allows users to manage a virtual library of books. Users can add new books with details such as title, author, number of pages, and whether they have read the book or not. They can also view, toggle the read status, and remove books from the library.
 
+This version uses Class instead of simple constructors for the Book object
+
 ## Features
 
 - Add books to the library with title, author, pages, and read status.
