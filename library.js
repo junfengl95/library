@@ -2,21 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const myLibrary = [];
 
-    function Book(title, author, pages, hasRead) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.hasRead = hasRead;
-    }
+    class Book {
+        // Constructor
+        constructor(title, author, pages, hasRead) {
+            this.title = title;
+            this.author = author;
+            this.pages = pages;
+            this.hasRead = hasRead;
+        }
 
-    // Prototype method to toggle the read status of Book
-    Book.prototype.toggleReadStatus = function() {
-        this.hasRead = !this.hasRead; // swap true and false
-    }
+        toggleReadStatus(){
+            this.hasRead = !this.hasRead;
+        }
 
-    // Add an infor method to the Book prototype
-    Book.prototype.info = function () {
-        return `${this.title} by ${this.author}, ${this.pages}, ${this.hasRead ? 'read' : 'not read yet'}`;
+        info(){
+            return `${this.title} by ${this.author}, ${this.pages}, ${this.hasRead ? 'read' : 'not read yet'}`;
+        }
+
     }
 
     function addBookToLibrary(title, author, pages, hasRead) {
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to remove a Book from the library
-    function removeBookFromLibrary(index){
+    function removeBookFromLibrary(index) {
         myLibrary.splice(index, 1);
         displayLibrary();
     }
@@ -46,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bookshelf.innerHTML = "";
 
         // The index attribute refer to the index of the current book object in the array
-        myLibrary.forEach((book, index)=> {
+        myLibrary.forEach((book, index) => {
 
             // Create a Card element
             const card = document.createElement('div');
@@ -121,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // When user clicks anywhere outside the modal. close it
-    window.onclick = function(event) {
-        if (event.target == dialog){
+    window.onclick = function (event) {
+        if (event.target == dialog) {
             dialog.close();
         }
     }
